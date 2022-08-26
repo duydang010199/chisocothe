@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function random(size, max, min) {
+        let arrays = new Array(size);
+        for (let i = 0; i < size; i++) {
+          arrays[i] = Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        return arrays;
+      }
+      arr = random(10, 20, 10);
+      arr1 = random(20, 50, 30);
+      document.write(arr + "<br>");
+      document.write(arr1);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function towArray(size, max, min) {
+        let array = new Array(size);
+        for (let i = 0; i < size; i++) {
+          array[i] = new Array(size);
+          for (let j = 0; j < size; j++) {
+            array[i][j] = Math.floor(Math.random() * (max - min + 1) + min);
+          }
+        }
+        return array;
+      }
+      let towarray = towArray(10, 90, 10);
+      document.write(towarray.join("</br>"));
+      document.write("<br>");
+      document.write("<br>");
+
+      // Tính tổng số chẵn
+      function sumNumber(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          for (let j = 0; j < array.length; j++) {
+            if (array[i][j] % 2 == 0) {
+              sum += array[i][j];
+            }
+          }
+        }
+        return sum;
+      }
+      let sumnumber = sumNumber(towarray);
+      document.write(`- Tổng các số chẵn là ${sumnumber} <br>`);
+
+      //Tổng trên đường chéo chính
+      function sumDiagonal(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          for (let j = 0; j < array.length; j++) {
+            if (i == j) {
+              sum += array[i][j];
+            }
+          }
+        }
+        return sum;
+      }
+      let sumdiagonal = sumDiagonal(towarray);
+      document.write(`- Tổng đường chéo chính là ${sumdiagonal} <br>`);
+
+      //Tổng đường chéo phụ
+      function sumSubsidiary(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          for (let j = array.length - 1; j >= 0; j--) {
+            if (i + j == array.length - 1) {
+              sum += array[i][j];
+            }
+          }
+        }
+        return sum;
+      }
+      let sumsubsidiary = sumSubsidiary(towarray);
+      document.write(`- Tổng đường chéo phụ là ${sumsubsidiary} <br>`);
+
+      //Tổng các giá trị trên đường biên
+      function sumBorderline(array) {
+        sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          for (let j = 0; j < array.length; j++) {
+            if (
+              i == 0 ||
+              i == array.length - 1 ||
+              j == 0 ||
+              j == array.length - 1
+            ) {
+              sum += array[i][j];
+            }
+          }
+        }
+        return sum;
+      }
+      let sumborderline = sumBorderline(towarray);
+      document.write(`- Tổng đường biên là ${sumborderline} <br>`);
+      document.write("<br>");
+
+      //Hiển thị ma trận tam giác trên
+      function lowerTriangle(array) {
+        let arr = new Array();
+        for (let i = 0; i < array.length; i++) {
+          arr[i] = [];
+          for (let j = 0; j <= i; j++) {
+            arr[i][j] = array[i][j];
+          }
+        }
+        return arr;
+      }
+      let lowertriangle = lowerTriangle(towarray);
+      document.write(`${lowertriangle.join("<br>")}`);
+      document.write("<br>");
+      document.write("<br>");
+
+      //Hiển thị ma trận tam giác dưới
+      function upperTriangle(array) {
+        let arr = new Array();
+        let column = array.length;
+        for (let i = 0; i < array.length; i++) {
+          arr[i] = [];
+          for (let j = 0; j < column; j++) {
+            arr[i][j] = array[i][j];
+          }
+          column--;
+        }
+        return arr;
+      }
+      let uppertriangle = upperTriangle(towarray);
+      document.write(`${uppertriangle.join("<br>")}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   // Bài 1
+      //   function alertMessage() {
+      //     return "Hello";
+      //   }
+      //   document.write(alertMessage() + "<br>");
+
+      //   //Bài 2
+      //   function number(a) {
+      //     return a + 1;
+      //   }
+      //   result = number(6);
+      //   document.write(result);
+      //   document.write("<br>");
+
+      //   //Bài 3
+      //   function towNumber(a, b) {
+      //     if (a > b) {
+      //       document.write("Bạn nhập sai ");
+      //     }
+      //     if (a < b) {
+      //       return a + b;
+      //     }
+      //   }
+      //   result = towNumber(5, 4);
+      //   document.write(result);
+
+      //   //Bài 4
+      //   function addNumbers() {
+      //     firstNum = 4;
+      //     secondNum = 8;
+      //     result = firstNum + secondNum;
+      //     return result;
+      //   }
+      //   result = 0;
+      //   alert(result);
+      //   result = addNumbers();
+      //   alert(result);
+      //   document.write("<br>");
+
+      //Bài 5
+      function parameter() {
+        let stars = [
+          "Polaris",
+          "Aldebaran",
+          "Deneb",
+          "Vega",
+          "Altair",
+          "Dubhe",
+          "Regulus",
+        ];
+        let constellations = [
+          "Ursa Minor",
+          "Tarurus",
+          "Cygnus",
+          "Lyra",
+          "Aquila",
+          "Ursa Major",
+          "Leo",
+        ];
+        let index_star = 0;
+        let result = "";
+        for (let s = 0; s < stars.length; s++) {
+          if (star == stars[s]) {
+            index_star = s;
+            for (let c = 0; c < constellations.length; c++) {
+              if (index_star == c) {
+                result = constellations[c];
+                return result;
+              } else {
+                result = "Can't find stars";
+                return result;
+              }
+            }
+          } else {
+            result = "Can't find stars";
+            return result;
+          }
+        }
+      }
+      let star = prompt("Input star: ");
+      document.write(parameter(star));
+    </script>
+  </body>
+</html>
